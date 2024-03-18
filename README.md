@@ -1,2 +1,6 @@
 # Python--challenge
 Module 3 challenge
+This assignment was challenging because it required me to use all the knowlegde I have acquired so far in python to arrive at the expected results.
+I relied on helpful websites such as W3school.com, geeksforgeeks.org and stack overflow to guide me in simplifying my code and understanding certain concepts I had difficulty with.
+A challenge I had with the assignment was the part about finding the changes in profit/loss. I expected that for changes to be significantly utilised, the dates must be in chronological order, so that the next day would truly be the chronological next date. I thus sorted out my data by the date such that the date colum went from january through to December. However, when I did that, the results I got did not match the expected results as the expected result appears to have been done based the mixed dates order. I am not ery sure how useful such information would be in real life unless it was just meant to test our ability to apply the skills learnt. I thus spent a lot of time figuring that part out.
+As I worked on the assignment, I discovered some simpler ways of getting things done such as opening a new file and I got a better understanding of the return function
