@@ -4,11 +4,12 @@ import csv
 #impoting csv by creating fle path
 poll_path = os.path.join("Resources","election_data.csv")
 
-#opening csv file
+#opening csv file and storing header row
 with open(poll_path, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csvheader = next(csvfile)
 
+#creating lists for reference
     Ballot_ID = []
     County = []
     Candidate = []
@@ -22,6 +23,7 @@ with open(poll_path, "r") as csvfile:
  #calculating total number vites cast
     total_votes = len(Ballot_ID) 
 
+    #determing list of unique candidates
     for name in Candidate:
         if name in candidatelist:
             pass
@@ -49,10 +51,10 @@ with open(poll_path, "r") as csvfile:
 
     candidate_Percent_votes ={"Charles Casper Stockham":Charles_percent,"Diana DeGette": Diana_percent,"Raymon Anthony Doane":Raymon_percent}
 
-    #print(candidate_Percent_votes)
     
     #winner will be the highest perentage votes
-    winner = max(candidate_Percent_votes)
+    winner = max(zip(candidate_Percent_votes.values(), candidate_Percent_votes.keys()))[1]
+    #print(winner)
 
     print("Election Results")
     print("-------------------------------")
@@ -62,11 +64,11 @@ with open(poll_path, "r") as csvfile:
     print("Diana DeGette: ",Diana_percent,"%","(",diana_votes,")")
     print("Raymon Anthony Doane: ",Raymon_percent,"%","(",raymon_votes,")")
     print("-------------------------------")
-    print("Winner: ","Diana DeGette")
+    print("Winner: ", winner)
     print("-------------------------------")
 
 
-# exporting resilts summary in text file in Analysis folder
+# exporting results summary in text file in Analysis folder
 summary_statement = """Election Results
 -------------------------------
 Total votes:  369711
@@ -78,6 +80,7 @@ Raymon Anthony Doane:  3.139 % ( 11606 )
 Winner:  Diana DeGette
 -------------------------------"""
 
+#opening new file path and writing results file
 filename = "election_results.txt"
 
 election_path = os.path.join ("Analysis", "election_results.txt")
