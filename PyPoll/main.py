@@ -80,11 +80,12 @@ Winner:  Diana DeGette
 
 filename = "election_results.txt"
 
-election_path = os.path.join("Analyis", "election_results.txt")
+election_path = os.path.join ("Analysis", "election_results.txt")
 
-with open(election_path) as f:
+with open (election_path, "w") as f:
 
     f.writelines(summary_statement)
+
     f.close
     
 
