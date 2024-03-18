@@ -54,7 +54,6 @@ with open(poll_path, "r") as csvfile:
     
     #winner will be the highest perentage votes
     winner = max(zip(candidate_Percent_votes.values(), candidate_Percent_votes.keys()))[1]
-    #print(winner)
 
     print("Election Results")
     print("-------------------------------")
